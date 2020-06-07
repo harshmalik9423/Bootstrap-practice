@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+install:
+  - docker image build -t bootstrapserver .
+
+script:
+  - docker run -itd -p 8080:3000 --name bootstrapserver bootstrapserver
